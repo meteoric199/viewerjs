@@ -66,6 +66,10 @@ export default {
   // Type: String (an image attribute) or Function (should return an image URL)
   url: 'src',
 
+  // Define where to get the thumb image URL for viewing,using in lazy load model.
+  // Type: String 
+  thumbUrl:"",
+
   // Event shortcuts
   ready: null,
   show: null,

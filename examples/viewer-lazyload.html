@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Viewer.js-Lazyload</title>
+    <link rel="stylesheet" href="../dist/viewer.css">
+    <style>
+        #galley {
+            text-align: center;
+            width:700px;
+            height:800px;
+        }
+
+        .pictures {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            margin: 0 auto;
+            width: 500px;
+        }
+
+        .pictures>li {
+            float: left;
+            width: 33%;
+            height: 100px;
+            margin: 0 -1px -1px 0;
+            border: 1px solid transparent;
+            overflow: hidden;
+        }
+
+        .pictures>li>img {
+            width: 100%;
+            height:100%;
+            cursor: -webkit-zoom-in;
+            cursor: zoom-in;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="galley">
+        <ul class="pictures">
+          <li><img class="lazy" data-original="../docs/images/tibet-1.jpg" data-lazyoriginal="../docs/images/thumbnails/tibet-1.jpg" alt="Cuo Na Lake"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-2.jpg" data-lazyoriginal="../docs/images/thumbnails/tibet-2.jpg" alt="Tibetan Plateau"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-3.jpg" data-lazyoriginal="../docs/images/thumbnails/tibet-3.jpg" alt="Jokhang Temple"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-4.jpg" data-lazyoriginal="../docs/images/thumbnails/tibet-4.jpg" alt="Potala Palace 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-5.jpg" data-lazyoriginal="../docs/images/thumbnails/tibet-5.jpg" alt="Potala Palace 2"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-6.jpg" data-lazyoriginal="../docs/images/thumbnails/tibet-6.jpg" alt="Potala Palace 3"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-7.jpg" data-lazyoriginal="../docs/images/thumbnails/tibet-7.jpg" alt="Lhasa River"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-8.jpg" data-lazyoriginal="../docs/images/thumbnails/tibet-8.jpg" alt="Namtso 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-9.jpg" data-lazyoriginal="../docs/images/thumbnails/tibet-9.jpg" alt="Namtso 2"></li>
+           
+            <li><img class="lazy" data-original="../docs/images/tibet-1.jpg?1" data-lazyoriginal="../docs/images/thumbnails/tibet-1.jpg?1" alt="Cuo Na Lake"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-2.jpg?1" data-lazyoriginal="../docs/images/thumbnails/tibet-2.jpg?1" alt="Tibetan Plateau"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-3.jpg?1" data-lazyoriginal="../docs/images/thumbnails/tibet-3.jpg?1" alt="Jokhang Temple"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-4.jpg?1" data-lazyoriginal="../docs/images/thumbnails/tibet-4.jpg?1" alt="Potala Palace 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-5.jpg?1" data-lazyoriginal="../docs/images/thumbnails/tibet-5.jpg?1" alt="Potala Palace 2"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-6.jpg?1" data-lazyoriginal="../docs/images/thumbnails/tibet-6.jpg?1" alt="Potala Palace 3"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-7.jpg?1" data-lazyoriginal="../docs/images/thumbnails/tibet-7.jpg?1" alt="Lhasa River"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-8.jpg?1" data-lazyoriginal="../docs/images/thumbnails/tibet-8.jpg?1" alt="Namtso 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-9.jpg?1" data-lazyoriginal="../docs/images/thumbnails/tibet-9.jpg?1" alt="Namtso 2"></li>
+
+            <li><img class="lazy" data-original="../docs/images/tibet-1.jpg?2" data-lazyoriginal="../docs/images/thumbnails/tibet-1.jpg?2" alt="Cuo Na Lake"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-2.jpg?2" data-lazyoriginal="../docs/images/thumbnails/tibet-2.jpg?2" alt="Tibetan Plateau"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-3.jpg?2" data-lazyoriginal="../docs/images/thumbnails/tibet-3.jpg?2" alt="Jokhang Temple"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-4.jpg?2" data-lazyoriginal="../docs/images/thumbnails/tibet-4.jpg?2" alt="Potala Palace 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-5.jpg?2" data-lazyoriginal="../docs/images/thumbnails/tibet-5.jpg?2" alt="Potala Palace 2"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-6.jpg?2" data-lazyoriginal="../docs/images/thumbnails/tibet-6.jpg?2" alt="Potala Palace 3"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-7.jpg?2" data-lazyoriginal="../docs/images/thumbnails/tibet-7.jpg?2" alt="Lhasa River"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-8.jpg?2" data-lazyoriginal="../docs/images/thumbnails/tibet-8.jpg?2" alt="Namtso 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-9.jpg?2" data-lazyoriginal="../docs/images/thumbnails/tibet-9.jpg?2" alt="Namtso 2"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-1.jpg?3" data-lazyoriginal="../docs/images/thumbnails/tibet-1.jpg?3" alt="Cuo Na Lake"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-2.jpg?3" data-lazyoriginal="../docs/images/thumbnails/tibet-2.jpg?3" alt="Tibetan Plateau"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-3.jpg?3" data-lazyoriginal="../docs/images/thumbnails/tibet-3.jpg?3" alt="Jokhang Temple"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-4.jpg?3" data-lazyoriginal="../docs/images/thumbnails/tibet-4.jpg?3" alt="Potala Palace 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-5.jpg?3" data-lazyoriginal="../docs/images/thumbnails/tibet-5.jpg?3" alt="Potala Palace 2"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-6.jpg?3" data-lazyoriginal="../docs/images/thumbnails/tibet-6.jpg?3" alt="Potala Palace 3"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-7.jpg?3" data-lazyoriginal="../docs/images/thumbnails/tibet-7.jpg?3" alt="Lhasa River"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-8.jpg?3" data-lazyoriginal="../docs/images/thumbnails/tibet-8.jpg?3" alt="Namtso 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-9.jpg?3" data-lazyoriginal="../docs/images/thumbnails/tibet-9.jpg?3" alt="Namtso 2"></li>
+
+            <li><img class="lazy" data-original="../docs/images/tibet-1.jpg?4" data-lazyoriginal="../docs/images/thumbnails/tibet-1.jpg?4" alt="Cuo Na Lake"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-2.jpg?4" data-lazyoriginal="../docs/images/thumbnails/tibet-2.jpg?4" alt="Tibetan Plateau"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-3.jpg?4" data-lazyoriginal="../docs/images/thumbnails/tibet-3.jpg?4" alt="Jokhang Temple"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-4.jpg?4" data-lazyoriginal="../docs/images/thumbnails/tibet-4.jpg?4" alt="Potala Palace 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-5.jpg?4" data-lazyoriginal="../docs/images/thumbnails/tibet-5.jpg?4" alt="Potala Palace 2"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-6.jpg?4" data-lazyoriginal="../docs/images/thumbnails/tibet-6.jpg?4" alt="Potala Palace 3"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-7.jpg?4" data-lazyoriginal="../docs/images/thumbnails/tibet-7.jpg?4" alt="Lhasa River"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-8.jpg?4" data-lazyoriginal="../docs/images/thumbnails/tibet-8.jpg?4" alt="Namtso 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-9.jpg?4" data-lazyoriginal="../docs/images/thumbnails/tibet-9.jpg?4" alt="Namtso 2"></li>
+
+
+            <li><img class="lazy" data-original="../docs/images/tibet-1.jpg?5" data-lazyoriginal="../docs/images/thumbnails/tibet-1.jpg?5" alt="Cuo Na Lake"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-2.jpg?5" data-lazyoriginal="../docs/images/thumbnails/tibet-2.jpg?5" alt="Tibetan Plateau"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-3.jpg?5" data-lazyoriginal="../docs/images/thumbnails/tibet-3.jpg?5" alt="Jokhang Temple"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-4.jpg?5" data-lazyoriginal="../docs/images/thumbnails/tibet-4.jpg?5" alt="Potala Palace 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-5.jpg?5" data-lazyoriginal="../docs/images/thumbnails/tibet-5.jpg?5" alt="Potala Palace 2"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-6.jpg?5" data-lazyoriginal="../docs/images/thumbnails/tibet-6.jpg?5" alt="Potala Palace 3"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-7.jpg?5" data-lazyoriginal="../docs/images/thumbnails/tibet-7.jpg?5" alt="Lhasa River"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-8.jpg?5" data-lazyoriginal="../docs/images/thumbnails/tibet-8.jpg?5" alt="Namtso 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-9.jpg?5" data-lazyoriginal="../docs/images/thumbnails/tibet-9.jpg?5" alt="Namtso 2"></li>
+
+            <li><img class="lazy" data-original="../docs/images/tibet-1.jpg?6" data-lazyoriginal="../docs/images/thumbnails/tibet-1.jpg?6" alt="Cuo Na Lake"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-2.jpg?6" data-lazyoriginal="../docs/images/thumbnails/tibet-2.jpg?6" alt="Tibetan Plateau"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-3.jpg?6" data-lazyoriginal="../docs/images/thumbnails/tibet-3.jpg?6" alt="Jokhang Temple"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-4.jpg?6" data-lazyoriginal="../docs/images/thumbnails/tibet-4.jpg?6" alt="Potala Palace 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-5.jpg?6" data-lazyoriginal="../docs/images/thumbnails/tibet-5.jpg?6" alt="Potala Palace 2"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-6.jpg?6" data-lazyoriginal="../docs/images/thumbnails/tibet-6.jpg?6" alt="Potala Palace 3"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-7.jpg?6" data-lazyoriginal="../docs/images/thumbnails/tibet-7.jpg?6" alt="Lhasa River"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-8.jpg?6" data-lazyoriginal="../docs/images/thumbnails/tibet-8.jpg?6" alt="Namtso 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-9.jpg?6" data-lazyoriginal="../docs/images/thumbnails/tibet-9.jpg?6" alt="Namtso 2"></li>
+
+            <li><img class="lazy" data-original="../docs/images/tibet-1.jpg?7" data-lazyoriginal="../docs/images/thumbnails/tibet-1.jpg?7" alt="Cuo Na Lake"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-2.jpg?7" data-lazyoriginal="../docs/images/thumbnails/tibet-2.jpg?7" alt="Tibetan Plateau"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-3.jpg?7" data-lazyoriginal="../docs/images/thumbnails/tibet-3.jpg?7" alt="Jokhang Temple"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-4.jpg?7" data-lazyoriginal="../docs/images/thumbnails/tibet-4.jpg?7" alt="Potala Palace 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-5.jpg?7" data-lazyoriginal="../docs/images/thumbnails/tibet-5.jpg?7" alt="Potala Palace 2"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-6.jpg?7" data-lazyoriginal="../docs/images/thumbnails/tibet-6.jpg?7" alt="Potala Palace 3"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-7.jpg?7" data-lazyoriginal="../docs/images/thumbnails/tibet-7.jpg?7" alt="Lhasa River"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-8.jpg?7" data-lazyoriginal="../docs/images/thumbnails/tibet-8.jpg?7" alt="Namtso 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-9.jpg?7" data-lazyoriginal="../docs/images/thumbnails/tibet-9.jpg?7" alt="Namtso 2"></li>
+           
+            <li><img class="lazy" data-original="../docs/images/tibet-1.jpg?8" data-lazyoriginal="../docs/images/thumbnails/tibet-1.jpg?8" alt="Cuo Na Lake"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-2.jpg?8" data-lazyoriginal="../docs/images/thumbnails/tibet-2.jpg?8" alt="Tibetan Plateau"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-3.jpg?8" data-lazyoriginal="../docs/images/thumbnails/tibet-3.jpg?8" alt="Jokhang Temple"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-4.jpg?8" data-lazyoriginal="../docs/images/thumbnails/tibet-4.jpg?8" alt="Potala Palace 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-5.jpg?8" data-lazyoriginal="../docs/images/thumbnails/tibet-5.jpg?8" alt="Potala Palace 2"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-6.jpg?8" data-lazyoriginal="../docs/images/thumbnails/tibet-6.jpg?8" alt="Potala Palace 3"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-7.jpg?8" data-lazyoriginal="../docs/images/thumbnails/tibet-7.jpg?8" alt="Lhasa River"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-8.jpg?8" data-lazyoriginal="../docs/images/thumbnails/tibet-8.jpg?8" alt="Namtso 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-9.jpg?8" data-lazyoriginal="../docs/images/thumbnails/tibet-9.jpg?8" alt="Namtso 2"></li>
+          
+            <li><img class="lazy" data-original="../docs/images/tibet-1.jpg?9" data-lazyoriginal="../docs/images/thumbnails/tibet-1.jpg?9" alt="Cuo Na Lake"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-2.jpg?9" data-lazyoriginal="../docs/images/thumbnails/tibet-2.jpg?9" alt="Tibetan Plateau"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-3.jpg?9" data-lazyoriginal="../docs/images/thumbnails/tibet-3.jpg?9" alt="Jokhang Temple"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-4.jpg?9" data-lazyoriginal="../docs/images/thumbnails/tibet-4.jpg?9" alt="Potala Palace 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-5.jpg?9" data-lazyoriginal="../docs/images/thumbnails/tibet-5.jpg?9" alt="Potala Palace 2"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-6.jpg?9" data-lazyoriginal="../docs/images/thumbnails/tibet-6.jpg?9" alt="Potala Palace 3"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-7.jpg?9" data-lazyoriginal="../docs/images/thumbnails/tibet-7.jpg?9" alt="Lhasa River"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-8.jpg?9" data-lazyoriginal="../docs/images/thumbnails/tibet-8.jpg?9" alt="Namtso 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-9.jpg?9" data-lazyoriginal="../docs/images/thumbnails/tibet-9.jpg?9" alt="Namtso 2"></li>
+
+            <li><img class="lazy" data-original="../docs/images/tibet-1.jpg?10" data-lazyoriginal="../docs/images/thumbnails/tibet-1.jpg?10" alt="Cuo Na Lake"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-2.jpg?10" data-lazyoriginal="../docs/images/thumbnails/tibet-2.jpg?10" alt="Tibetan Plateau"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-3.jpg?10" data-lazyoriginal="../docs/images/thumbnails/tibet-3.jpg?10" alt="Jokhang Temple"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-4.jpg?10" data-lazyoriginal="../docs/images/thumbnails/tibet-4.jpg?10" alt="Potala Palace 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-5.jpg?10" data-lazyoriginal="../docs/images/thumbnails/tibet-5.jpg?10" alt="Potala Palace 2"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-6.jpg?10" data-lazyoriginal="../docs/images/thumbnails/tibet-6.jpg?10" alt="Potala Palace 3"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-7.jpg?10" data-lazyoriginal="../docs/images/thumbnails/tibet-7.jpg?10" alt="Lhasa River"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-8.jpg?10" data-lazyoriginal="../docs/images/thumbnails/tibet-8.jpg?10" alt="Namtso 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-9.jpg?10" data-lazyoriginal="../docs/images/thumbnails/tibet-9.jpg?10" alt="Namtso 2"></li>
+            
+            <li><img class="lazy" data-original="../docs/images/tibet-1.jpg?11" data-lazyoriginal="../docs/images/thumbnails/tibet-1.jpg?11" alt="Cuo Na Lake"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-2.jpg?11" data-lazyoriginal="../docs/images/thumbnails/tibet-2.jpg?11" alt="Tibetan Plateau"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-3.jpg?11" data-lazyoriginal="../docs/images/thumbnails/tibet-3.jpg?11" alt="Jokhang Temple"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-4.jpg?11" data-lazyoriginal="../docs/images/thumbnails/tibet-4.jpg?11" alt="Potala Palace 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-5.jpg?11" data-lazyoriginal="../docs/images/thumbnails/tibet-5.jpg?11" alt="Potala Palace 2"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-6.jpg?11" data-lazyoriginal="../docs/images/thumbnails/tibet-6.jpg?11" alt="Potala Palace 3"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-7.jpg?11" data-lazyoriginal="../docs/images/thumbnails/tibet-7.jpg?11" alt="Lhasa River"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-8.jpg?11" data-lazyoriginal="../docs/images/thumbnails/tibet-8.jpg?11" alt="Namtso 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-9.jpg?11" data-lazyoriginal="../docs/images/thumbnails/tibet-9.jpg?11" alt="Namtso 2"></li>
+
+            <li><img class="lazy" data-original="../docs/images/tibet-1.jpg?12" data-lazyoriginal="../docs/images/thumbnails/tibet-1.jpg?12" alt="Cuo Na Lake"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-2.jpg?12" data-lazyoriginal="../docs/images/thumbnails/tibet-2.jpg?12" alt="Tibetan Plateau"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-3.jpg?12" data-lazyoriginal="../docs/images/thumbnails/tibet-3.jpg?12" alt="Jokhang Temple"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-4.jpg?12" data-lazyoriginal="../docs/images/thumbnails/tibet-4.jpg?12" alt="Potala Palace 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-5.jpg?12" data-lazyoriginal="../docs/images/thumbnails/tibet-5.jpg?12" alt="Potala Palace 2"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-6.jpg?12" data-lazyoriginal="../docs/images/thumbnails/tibet-6.jpg?12" alt="Potala Palace 3"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-7.jpg?12" data-lazyoriginal="../docs/images/thumbnails/tibet-7.jpg?12" alt="Lhasa River"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-8.jpg?12" data-lazyoriginal="../docs/images/thumbnails/tibet-8.jpg?12" alt="Namtso 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-9.jpg?12" data-lazyoriginal="../docs/images/thumbnails/tibet-9.jpg?12" alt="Namtso 2"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-1.jpg?13" data-lazyoriginal="../docs/images/thumbnails/tibet-1.jpg?13" alt="Cuo Na Lake"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-2.jpg?13" data-lazyoriginal="../docs/images/thumbnails/tibet-2.jpg?13" alt="Tibetan Plateau"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-3.jpg?13" data-lazyoriginal="../docs/images/thumbnails/tibet-3.jpg?13" alt="Jokhang Temple"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-4.jpg?13" data-lazyoriginal="../docs/images/thumbnails/tibet-4.jpg?13" alt="Potala Palace 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-5.jpg?13" data-lazyoriginal="../docs/images/thumbnails/tibet-5.jpg?13" alt="Potala Palace 2"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-6.jpg?13" data-lazyoriginal="../docs/images/thumbnails/tibet-6.jpg?13" alt="Potala Palace 3"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-7.jpg?13" data-lazyoriginal="../docs/images/thumbnails/tibet-7.jpg?13" alt="Lhasa River"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-8.jpg?13" data-lazyoriginal="../docs/images/thumbnails/tibet-8.jpg?13" alt="Namtso 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-9.jpg?13" data-lazyoriginal="../docs/images/thumbnails/tibet-9.jpg?13" alt="Namtso 2"></li>
+
+            <li><img class="lazy" data-original="../docs/images/tibet-1.jpg?14" data-lazyoriginal="../docs/images/thumbnails/tibet-1.jpg?14" alt="Cuo Na Lake"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-2.jpg?14" data-lazyoriginal="../docs/images/thumbnails/tibet-2.jpg?14" alt="Tibetan Plateau"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-3.jpg?14" data-lazyoriginal="../docs/images/thumbnails/tibet-3.jpg?14" alt="Jokhang Temple"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-4.jpg?14" data-lazyoriginal="../docs/images/thumbnails/tibet-4.jpg?14" alt="Potala Palace 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-5.jpg?14" data-lazyoriginal="../docs/images/thumbnails/tibet-5.jpg?14" alt="Potala Palace 2"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-6.jpg?14" data-lazyoriginal="../docs/images/thumbnails/tibet-6.jpg?14" alt="Potala Palace 3"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-7.jpg?14" data-lazyoriginal="../docs/images/thumbnails/tibet-7.jpg?14" alt="Lhasa River"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-8.jpg?14" data-lazyoriginal="../docs/images/thumbnails/tibet-8.jpg?14" alt="Namtso 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-9.jpg?14" data-lazyoriginal="../docs/images/thumbnails/tibet-9.jpg?14" alt="Namtso 2"></li>
+
+
+            <li><img class="lazy" data-original="../docs/images/tibet-1.jpg?15" data-lazyoriginal="../docs/images/thumbnails/tibet-1.jpg?15" alt="Cuo Na Lake"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-2.jpg?15" data-lazyoriginal="../docs/images/thumbnails/tibet-2.jpg?15" alt="Tibetan Plateau"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-3.jpg?15" data-lazyoriginal="../docs/images/thumbnails/tibet-3.jpg?15" alt="Jokhang Temple"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-4.jpg?15" data-lazyoriginal="../docs/images/thumbnails/tibet-4.jpg?15" alt="Potala Palace 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-5.jpg?15" data-lazyoriginal="../docs/images/thumbnails/tibet-5.jpg?15" alt="Potala Palace 2"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-6.jpg?15" data-lazyoriginal="../docs/images/thumbnails/tibet-6.jpg?15" alt="Potala Palace 3"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-7.jpg?15" data-lazyoriginal="../docs/images/thumbnails/tibet-7.jpg?15" alt="Lhasa River"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-8.jpg?15" data-lazyoriginal="../docs/images/thumbnails/tibet-8.jpg?15" alt="Namtso 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-9.jpg?15" data-lazyoriginal="../docs/images/thumbnails/tibet-9.jpg?15" alt="Namtso 2"></li>
+
+            <li><img class="lazy" data-original="../docs/images/tibet-1.jpg?16" data-lazyoriginal="../docs/images/thumbnails/tibet-1.jpg?16" alt="Cuo Na Lake"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-2.jpg?16" data-lazyoriginal="../docs/images/thumbnails/tibet-2.jpg?16" alt="Tibetan Plateau"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-3.jpg?16" data-lazyoriginal="../docs/images/thumbnails/tibet-3.jpg?16" alt="Jokhang Temple"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-4.jpg?16" data-lazyoriginal="../docs/images/thumbnails/tibet-4.jpg?16" alt="Potala Palace 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-5.jpg?16" data-lazyoriginal="../docs/images/thumbnails/tibet-5.jpg?16" alt="Potala Palace 2"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-6.jpg?16" data-lazyoriginal="../docs/images/thumbnails/tibet-6.jpg?16" alt="Potala Palace 3"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-7.jpg?16" data-lazyoriginal="../docs/images/thumbnails/tibet-7.jpg?16" alt="Lhasa River"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-8.jpg?16" data-lazyoriginal="../docs/images/thumbnails/tibet-8.jpg?16" alt="Namtso 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-9.jpg?16" data-lazyoriginal="../docs/images/thumbnails/tibet-9.jpg?16" alt="Namtso 2"></li>
+
+            <li><img class="lazy" data-original="../docs/images/tibet-1.jpg?17" data-lazyoriginal="../docs/images/thumbnails/tibet-1.jpg?17" alt="Cuo Na Lake"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-2.jpg?17" data-lazyoriginal="../docs/images/thumbnails/tibet-2.jpg?17" alt="Tibetan Plateau"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-3.jpg?17" data-lazyoriginal="../docs/images/thumbnails/tibet-3.jpg?17" alt="Jokhang Temple"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-4.jpg?17" data-lazyoriginal="../docs/images/thumbnails/tibet-4.jpg?17" alt="Potala Palace 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-5.jpg?17" data-lazyoriginal="../docs/images/thumbnails/tibet-5.jpg?17" alt="Potala Palace 2"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-6.jpg?17" data-lazyoriginal="../docs/images/thumbnails/tibet-6.jpg?17" alt="Potala Palace 3"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-7.jpg?17" data-lazyoriginal="../docs/images/thumbnails/tibet-7.jpg?17" alt="Lhasa River"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-8.jpg?17" data-lazyoriginal="../docs/images/thumbnails/tibet-8.jpg?17" alt="Namtso 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-9.jpg?17" data-lazyoriginal="../docs/images/thumbnails/tibet-9.jpg?17" alt="Namtso 2"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-1.jpg?18" data-lazyoriginal="../docs/images/thumbnails/tibet-1.jpg?18" alt="Cuo Na Lake"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-2.jpg?18" data-lazyoriginal="../docs/images/thumbnails/tibet-2.jpg?18" alt="Tibetan Plateau"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-3.jpg?18" data-lazyoriginal="../docs/images/thumbnails/tibet-3.jpg?18" alt="Jokhang Temple"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-4.jpg?18" data-lazyoriginal="../docs/images/thumbnails/tibet-4.jpg?18" alt="Potala Palace 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-5.jpg?18" data-lazyoriginal="../docs/images/thumbnails/tibet-5.jpg?18" alt="Potala Palace 2"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-6.jpg?18" data-lazyoriginal="../docs/images/thumbnails/tibet-6.jpg?18" alt="Potala Palace 3"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-7.jpg?18" data-lazyoriginal="../docs/images/thumbnails/tibet-7.jpg?18" alt="Lhasa River"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-8.jpg?18" data-lazyoriginal="../docs/images/thumbnails/tibet-8.jpg?18" alt="Namtso 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-9.jpg?18" data-lazyoriginal="../docs/images/thumbnails/tibet-9.jpg?18" alt="Namtso 2"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-1.jpg?19" data-lazyoriginal="../docs/images/thumbnails/tibet-1.jpg?19" alt="Cuo Na Lake"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-2.jpg?19" data-lazyoriginal="../docs/images/thumbnails/tibet-2.jpg?19" alt="Tibetan Plateau"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-3.jpg?19" data-lazyoriginal="../docs/images/thumbnails/tibet-3.jpg?19" alt="Jokhang Temple"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-4.jpg?19" data-lazyoriginal="../docs/images/thumbnails/tibet-4.jpg?19" alt="Potala Palace 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-5.jpg?19" data-lazyoriginal="../docs/images/thumbnails/tibet-5.jpg?19" alt="Potala Palace 2"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-6.jpg?19" data-lazyoriginal="../docs/images/thumbnails/tibet-6.jpg?19" alt="Potala Palace 3"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-7.jpg?19" data-lazyoriginal="../docs/images/thumbnails/tibet-7.jpg?19" alt="Lhasa River"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-8.jpg?19" data-lazyoriginal="../docs/images/thumbnails/tibet-8.jpg?19" alt="Namtso 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-9.jpg?19" data-lazyoriginal="../docs/images/thumbnails/tibet-9.jpg?19" alt="Namtso 2"></li>
+
+            <li><img class="lazy" data-original="../docs/images/tibet-1.jpg?110" data-lazyoriginal="../docs/images/thumbnails/tibet-1.jpg?110" alt="Cuo Na Lake"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-2.jpg?110" data-lazyoriginal="../docs/images/thumbnails/tibet-2.jpg?110" alt="Tibetan Plateau"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-3.jpg?110" data-lazyoriginal="../docs/images/thumbnails/tibet-3.jpg?110" alt="Jokhang Temple"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-4.jpg?110" data-lazyoriginal="../docs/images/thumbnails/tibet-4.jpg?110" alt="Potala Palace 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-5.jpg?110" data-lazyoriginal="../docs/images/thumbnails/tibet-5.jpg?110" alt="Potala Palace 2"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-6.jpg?110" data-lazyoriginal="../docs/images/thumbnails/tibet-6.jpg?110" alt="Potala Palace 3"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-7.jpg?110" data-lazyoriginal="../docs/images/thumbnails/tibet-7.jpg?110" alt="Lhasa River"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-8.jpg?110" data-lazyoriginal="../docs/images/thumbnails/tibet-8.jpg?110" alt="Namtso 1"></li>
+            <li><img class="lazy" data-original="../docs/images/tibet-9.jpg?110" data-lazyoriginal="../docs/images/thumbnails/tibet-9.jpg?110" alt="Namtso 2"></li>
+
+        </ul>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/7.2.0/lazyload.min.js"></script>
+    <script src="../dist/viewer.js"></script>
+    <script>
+
+
+	(function() {
+        new LazyLoad({
+            elements_selector: ".lazy",
+            data_src:"lazyoriginal",
+
+        });
+    var galley = document.getElementById('galley');
+       viewer = new Viewer(galley, {
+          url: 'data-original',
+          thumbUrl:"data-lazyoriginal"
+        });
+		}());
+    </script>
+</body>
+
+</html>

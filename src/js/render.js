@@ -59,7 +59,7 @@ export default {
       const alt = image.alt || $.getImageName(src);
       let url = options.url;
 
-      if (!src) {
+      if (!src && !self.options.thumbUrl) {
         return;
       }
 

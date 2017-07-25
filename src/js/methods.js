@@ -135,11 +135,14 @@ export default {
     // Clear title
     $.empty(title);
 
+
     // Generate title after viewed
     $.addListener(element, 'viewed', () => {
       const imageData = self.imageData;
 
       $.setText(title, `${alt} (${imageData.naturalWidth} × ${imageData.naturalHeight})`);
+
+      self.lazyLoadNavi(index);
     }, true);
 
     if (image.complete) {

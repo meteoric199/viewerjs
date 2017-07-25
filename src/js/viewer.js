@@ -6,6 +6,7 @@ import handlers from './handlers';
 import methods from './methods';
 import others from './others';
 import * as $ from './utilities';
+import lazyload from './lazyload.js';
 
 const SUPPORT_TRANSITION = typeof document.createElement('viewer').style.transition !== 'undefined';
 let AnotherViewer;
@@ -210,6 +211,7 @@ $.extend(Viewer.prototype, events);
 $.extend(Viewer.prototype, handlers);
 $.extend(Viewer.prototype, methods);
 $.extend(Viewer.prototype, others);
+$.extend(Viewer.prototype, lazyload);
 
 if (typeof window !== 'undefined') {
   AnotherViewer = window.Viewer;

@@ -1,13 +1,3 @@
-/*!
- * Viewer.js v0.7.1
- * https://github.com/fengyuanchen/viewerjs
- *
- * Copyright (c) 2017 Fengyuan Chen
- * Released under the MIT license
- *
- * Date: 2017-05-14T07:05:32.049Z
- */
-
 'use strict';
 
 var DEFAULTS = {
@@ -77,6 +67,10 @@ var DEFAULTS = {
   // Define where to get the original image URL for viewing
   // Type: String (an image attribute) or Function (should return an image URL)
   url: 'src',
+
+  // Define where to get the thumb image URL for viewing,using in lazy load model.
+  // Type: String 
+  thumbUrl: "",
 
   // Event shortcuts
   ready: null,
@@ -199,7 +193,6 @@ var set = function set(object, property, value, receiver) {
   return value;
 };
 
-// RegExps
 var REGEXP_HYPHENATE = /([a-z\d])([A-Z])/g;
 var REGEXP_SPACES = /\s+/;
 var REGEXP_SUFFIX = /^(width|height|left|top|marginLeft|marginTop)$/;
@@ -808,7 +801,7 @@ var render$1 = {
       var alt = image.alt || getImageName(src);
       var url = options.url;
 
-      if (!src) {
+      if (!src && !self.options.thumbUrl) {
         return;
       }
 
@@ -948,7 +941,6 @@ var render$1 = {
   }
 };
 
-// Events
 var PointerEvent = typeof window !== 'undefined' ? window.PointerEvent : null;
 var EVENT_POINTER_DOWN = PointerEvent ? 'pointerdown' : 'touchstart mousedown';
 var EVENT_POINTER_MOVE = PointerEvent ? 'pointermove' : 'mousemove touchmove';
@@ -1505,10 +1497,7 @@ var methods = {
 
     self.image = image;
 
-    if (self.viewed) {
-      removeClass(self.items[self.index], 'viewer-active');
-    }
-
+    removeClass(self.items[self.index], 'viewer-active');
     addClass(item, 'viewer-active');
 
     self.viewed = false;
@@ -1530,6 +1519,8 @@ var methods = {
       var imageData = self.imageData;
 
       setText(title, alt + ' (' + imageData.naturalWidth + ' \xD7 ' + imageData.naturalHeight + ')');
+
+      self.lazyLoadNavi(index);
     }, true);
 
     if (image.complete) {
@@ -1861,22 +1852,20 @@ var methods = {
     });
 
     if (isNumber(options.interval) && options.interval > 0) {
-      (function () {
-        var playing = function playing() {
-          self.playing = setTimeout(function () {
-            removeClass(list[index], 'viewer-in');
-            index++;
-            index = index < total ? index : 0;
-            addClass(list[index], 'viewer-in');
+      var playing = function playing() {
+        self.playing = setTimeout(function () {
+          removeClass(list[index], 'viewer-in');
+          index++;
+          index = index < total ? index : 0;
+          addClass(list[index], 'viewer-in');
 
-            playing();
-          }, options.interval);
-        };
-
-        if (total > 1) {
           playing();
-        }
-      })();
+        }, options.interval);
+      };
+
+      if (total > 1) {
+        playing();
+      }
     }
 
     return self;
@@ -2287,6 +2276,42 @@ var others = {
   }
 };
 
+var lazyload = {
+    lazyLoadNavi: function lazyLoadNavi(index) {
+        var self = this;
+        var thumbUrl = self.options.thumbUrl;
+
+        if (!thumbUrl) {
+            return;
+        }
+        var middleCount = self.getMiddleShowingCountInNav();
+
+        var start = index - middleCount - 2;
+        var end = index + middleCount + 2;
+        if (start < 0) {
+            start = 0;
+        }
+
+        for (var i = start; i < end; i++) {
+            var $item = $(self.items).eq(i);
+
+            if (!$item.length) {
+                break;
+            }
+            var $img = $item.find("img");
+
+            $img.attr("src", self.images[i].attributes[thumbUrl].value);
+        }
+    },
+    getMiddleShowingCountInNav: function getMiddleShowingCountInNav() {
+        var self = this;
+        var $navbar = $(self.navbar);
+        var navWidth = $navbar.width();
+        var navImgWidth = $navbar.find("li:first").width();
+        return Math.floor(navWidth / navImgWidth / 2);
+    }
+};
+
 var SUPPORT_TRANSITION = typeof document.createElement('viewer').style.transition !== 'undefined';
 var AnotherViewer = void 0;
 
@@ -2356,21 +2381,19 @@ var Viewer = function () {
       self.scrollbarWidth = window.innerWidth - document.body.clientWidth;
 
       if (options.inline) {
-        (function () {
-          var progress = proxy(self.progress, self);
+        var progress = proxy(self.progress, self);
 
-          addListener(element, 'ready', function () {
-            self.view();
-          }, true);
+        addListener(element, 'ready', function () {
+          self.view();
+        }, true);
 
-          each(images, function (image) {
-            if (image.complete) {
-              progress();
-            } else {
-              addListener(image, 'load', progress, true);
-            }
-          });
-        })();
+        each(images, function (image) {
+          if (image.complete) {
+            progress();
+          } else {
+            addListener(image, 'load', progress, true);
+          }
+        });
       } else {
         addListener(element, 'click', self.onStart = proxy(self.start, self));
       }
@@ -2503,6 +2526,7 @@ extend(Viewer.prototype, events);
 extend(Viewer.prototype, handlers);
 extend(Viewer.prototype, methods);
 extend(Viewer.prototype, others);
+extend(Viewer.prototype, lazyload);
 
 if (typeof window !== 'undefined') {
   AnotherViewer = window.Viewer;
@@ -2510,3 +2534,4 @@ if (typeof window !== 'undefined') {
 }
 
 module.exports = Viewer;
+//# sourceMappingURL=viewer.common.js.map
