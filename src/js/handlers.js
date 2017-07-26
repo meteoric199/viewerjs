@@ -174,6 +174,8 @@ export default {
       self.initImage(() => {
         self.renderImage();
       });
+
+      self.lazyLoadNavi(self.index);
     }
 
     if (self.played) {

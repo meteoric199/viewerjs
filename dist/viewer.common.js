@@ -1167,6 +1167,8 @@ var handlers = {
       self.initImage(function () {
         self.renderImage();
       });
+
+      self.lazyLoadNavi(self.index);
     }
 
     if (self.played) {
