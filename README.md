@@ -27,7 +27,7 @@
 
 ## Features
 
-- Supports 29 [options](#options)
+- Supports 30 [options](#options)
 - Supports 23 [methods](#methods)
 - Supports 7 [events](#events)
 - Supports modal and inline modes
@@ -37,6 +37,7 @@
 - Supports rotation
 - Supports scale (flip)
 - Supports keyboard
+- Supports lazy load
 - Cross-browser support
 
 
@@ -109,6 +110,35 @@ var viewer = new Viewer(document.getElementById('image'), options);
 var viewer = new Viewer(document.getElementById('images'), options);
 ```
 
+
+### Lazy load
+Modal mode:Usage [lazyload](https://github.com/verlok/lazyload)  
+
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/7.2.0/lazyload.min.js"></script>
+
+<div id="galley">
+    <ul class="pictures">
+    <img class="lazy" data-original="big-picture.jpg" data-lazyoriginal="thumb-picture.jpg" alt="Picture">
+    </ul>
+</div>
+```
+
+```js
+// modal lazy load
+new LazyLoad({
+    elements_selector: ".lazy",
+    data_src: "lazyoriginal",
+
+});
+// viewer
+var galley = document.getElementById('galley');
+viewer = new Viewer(galley, {
+    url: 'data-original',
+    thumbUrl: "data-lazyoriginal"
+});
+```
 
 
 ## Keyboard support
@@ -338,6 +368,17 @@ Define where to get the original image URL for viewing.
 
 > If it is a string, it should be one of the attributes of each image element.
 > If it is a function, it will be called on each image and should return a valid image URL.
+
+
+### thumbUrl
+
+- Type: `String` 
+- Default: `''`
+
+Define where to get the thumb image URL in inline mode.
+
+> If it is a string, it should be one of the attributes of each image element.  
+> If using lazy loading, the inline mode while use this attribute to get thumb image url.
 
 
 ### ready

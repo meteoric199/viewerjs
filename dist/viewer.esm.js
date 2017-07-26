@@ -191,6 +191,7 @@ var set = function set(object, property, value, receiver) {
   return value;
 };
 
+// RegExps
 var REGEXP_HYPHENATE = /([a-z\d])([A-Z])/g;
 var REGEXP_SPACES = /\s+/;
 var REGEXP_SUFFIX = /^(width|height|left|top|marginLeft|marginTop)$/;
@@ -939,6 +940,7 @@ var render$1 = {
   }
 };
 
+// Events
 var PointerEvent = typeof window !== 'undefined' ? window.PointerEvent : null;
 var EVENT_POINTER_DOWN = PointerEvent ? 'pointerdown' : 'touchstart mousedown';
 var EVENT_POINTER_MOVE = PointerEvent ? 'pointermove' : 'mousemove touchmove';
