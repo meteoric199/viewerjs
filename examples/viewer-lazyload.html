@@ -47,23 +47,20 @@
         </ul>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/7.2.0/lazyload.min.js"></script>
     <script src="../dist/viewer.js"></script>
     <script>
         (function () {
             // add 500 images
-            var $picture = $(".pictures");
+            var picture = document.getElementsByClassName("pictures")[0];
             for (var i = 0; i < 500; i++) {
-                var random = Math.random();
-                $picture.append([
-                    '<li>' +
-                    '<img class="lazy" ' +
-                    'data-original="../docs/images/tibet-1.jpg?'+random+'" ' +
-                    'data-lazyoriginal="../docs/images/thumbnails/tibet-1.jpg?'+random+'" ' +
-                    'alt="Cuo Na Lake"/>' +
-                    '</li>'
-                ].join(""));
+                var li = document.createElement('li');
+                var img = document.createElement('img');
+                img.setAttribute("class","lazy");
+                img.setAttribute("data-original","../docs/images/tibet-1.jpg?"+i);
+                img.setAttribute("data-lazyoriginal","../docs/images/thumbnails/tibet-1.jpg?"+i);
+                li.appendChild(img);
+                picture.appendChild(li);
             }
             // modal lazy load
             new LazyLoad({

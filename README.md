@@ -112,8 +112,7 @@ var viewer = new Viewer(document.getElementById('images'), options);
 
 
 ### Lazy load
-Modal mode:Usage [lazyload](https://github.com/verlok/lazyload)  
-
+Modal mode should use [lazyload](https://github.com/verlok/lazyload)  
 
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/7.2.0/lazyload.min.js"></script>

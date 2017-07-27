@@ -197,7 +197,6 @@ var set = function set(object, property, value, receiver) {
   return value;
 };
 
-// RegExps
 var REGEXP_HYPHENATE = /([a-z\d])([A-Z])/g;
 var REGEXP_SPACES = /\s+/;
 var REGEXP_SUFFIX = /^(width|height|left|top|marginLeft|marginTop)$/;
@@ -946,7 +945,6 @@ var render$1 = {
   }
 };
 
-// Events
 var PointerEvent = typeof window !== 'undefined' ? window.PointerEvent : null;
 var EVENT_POINTER_DOWN = PointerEvent ? 'pointerdown' : 'touchstart mousedown';
 var EVENT_POINTER_MOVE = PointerEvent ? 'pointermove' : 'mousemove touchmove';
@@ -2299,23 +2297,22 @@ var lazyload = {
         if (start < 0) {
             start = 0;
         }
+        if (end > self.items.length) {
+            end = self.items.length;
+        }
 
         for (var i = start; i < end; i++) {
-            var $item = $(self.items).eq(i);
+            var item = self.items[i];
 
-            if (!$item.length) {
-                break;
-            }
-            var $img = $item.find("img");
-
-            $img.attr("src", self.images[i].attributes[thumbUrl].value);
+            var img = getByTag(item, "img")[0];
+            img.src = self.images[i].attributes[thumbUrl].value;
         }
     },
     getMiddleShowingCountInNav: function getMiddleShowingCountInNav() {
         var self = this;
-        var $navbar = $(self.navbar);
-        var navWidth = $navbar.width();
-        var navImgWidth = $navbar.find("li:first").width();
+        var navbar = self.navbar;
+        var navWidth = navbar.clientWidth;
+        var navImgWidth = navbar.getElementsByTagName('li')[0].clientWidth;
         return Math.floor(navWidth / navImgWidth / 2);
     }
 };
